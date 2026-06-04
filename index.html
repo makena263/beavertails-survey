@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>BeaverTails Survey</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="survey-container">
+
+    <div class="progress-row">
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <span class="progress-text">1/5</span>
+    </div>
+
+    <section id="question-screen">
+      <h1 id="question-title">Loading question...</h1>
+
+      <div class="answer-grid" id="answer-grid">
+        <!-- JavaScript adds answer cards here -->
+      </div>
+    </section>
+
+    <section id="result-screen" class="hidden">
+      <h1>Thank you!</h1>
+      <p>Your answers have been recorded.</p>
+      <button onclick="restartSurvey()">Start over</button>
+    </section>
+
+    <footer>
+      <img src="images/beavertails-logo.png" alt="BeaverTails logo" class="logo" />
+    </footer>
+
+  </main>
+ 
+
+  <script src="script.js"></script>
+</body>
+</html>
