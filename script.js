@@ -1,130 +1,86 @@
-const questions = [
+const questionsEN = [
   {
-    title: "Which BeaverTails matches your personality?",
+    title: "Which items would you purchase?",
     answers: [
-      {
-        label: "Classic",
-        image: "images/classic.png",
-        value: "classic"
-      },
-      {
-        label: "Decadent Tail",
-        image: "images/decadent-tail.png",
-        value: "decadent_tail"
-      },
-      {
-        label: "Beaver Bites",
-        image: "images/beaver-bites.png",
-        value: "beaver_bites"
-      },
-      {
-        label: "Poutail",
-        image: "images/poutail.png",
-        value: "poutail"
-      }
+      { label: "BeaverTails", image: "images/beavertail.png", value: "beavertails" },
+      { label: "BeaverDog",   image: "images/beaverdog.png",  value: "beaverdog" },
+      { label: "Poutine",     image: "images/poutine.png",    value: "poutine" },
+      { label: "Ice Cream",   image: "images/icecream.png",   value: "icecream" }
     ]
   },
   {
-    title: "How many times a year do you treat yourself to BeaverTails?",
+    title: "How many times a year do you visit BeaverTails?",
     answers: [
-      {
-        label: "Once",
-        image: "images/once.png",
-        value: "once"
-      },
-      {
-        label: "Twice",
-        image: "images/twice.png",
-        value: "twice"
-      },
-      {
-        label: "Three times",
-        image: "images/three-times.png",
-        value: "three_times"
-      },
-      {
-        label: "Four or more",
-        image: "images/four-or-more.png",
-        value: "four_or_more"
-      }
+      { label: "Once",        image: "images/once.png",         value: "once" },
+      { label: "Twice",       image: "images/twice.png",        value: "twice" },
+      { label: "Three times", image: "images/three-times.png",  value: "three_times" },
+      { label: "Four or more",image: "images/four-or-more.png", value: "four_or_more" }
     ]
   },
   {
-    title: "What new BeaverTails product would you be most likely to try?",
+    title: "Why are you in the area?",
     answers: [
-      {
-        label: "BeaverDog",
-        image: "images/beaverdog.png",
-        value: "beaverdog"
-      },
-      {
-        label: "Drinks",
-        image: "images/drinks.png",
-        value: "drinks"
-      },
-      {
-        label: "Ice Cream",
-        image: "images/icecream.png",
-        value: "icecream"
-      },
-      {
-        label: "Poutine",
-        image: "images/poutine.png",
-        value: "poutine"
-      }
+      { label: "Work",     image: "images/work.png",     value: "work" },
+      { label: "School",   image: "images/school.png",   value: "school" },
+      { label: "Vacation", image: "images/vacation.png", value: "vacation" },
+      { label: "Day off",  image: "images/day-off.png",  value: "day_off" }
     ]
   },
   {
-    title: "Where is your favorite place to enjoy a BeaverTail?",
+    title: "Where are you from?",
     answers: [
-      {
-        label: "Ski hill",
-        image: "images/ski-hill.png",
-        value: "ski_hill"
-      },
-      {
-        label: "Hiking",
-        image: "images/hiking.png",
-        value: "hiking"
-      },
-      {
-        label: "Picnic or festival",
-        image: "images/picnic-festival.png",
-        value: "picnic_or_festival"
-      },
-      {
-        label: "City",
-        image: "images/city.png",
-        value: "city"
-      }
-    ]
-  },
-  {
-    title: "How often are you in this area?",
-    answers: [
-      {
-        label: "First time",
-        image: "images/first-time.png",
-        value: "first_time"
-      },
-      {
-        label: "Frequently",
-        image: "images/frequently.png",
-        value: "frequently_7_plus_days_per_year"
-      },
-      {
-        label: "Every weekend",
-        image: "images/every-weekend.png",
-        value: "every_weekend"
-      },
-      {
-        label: "Local",
-        image: "images/local.png",
-        value: "local"
-      }
+      { label: "This city",     image: "images/this-region.png",   value: "this_city" },
+      { label: "This province", image: "images/this-province.png", value: "this_province" },
+      { label: "Canada",        image: "images/canada.png",        value: "canada" },
+      { label: "International", image: "images/international.png", value: "international" }
     ]
   }
 ];
+
+const questionsFR = [
+  {
+    title: "Quels articles achètes-tu?",
+    answers: [
+      { label: "BeaverTails", image: "images-fr/beavertail-fr.png", value: "beavertails" },
+      { label: "BeaverDog",   image: "images-fr/beaverdog-fr.png",  value: "beaverdog" },
+      { label: "Poutine",     image: "images-fr/poutine-fr.png",    value: "poutine" },
+      { label: "Crème glacée",image: "images-fr/icecream-fr.png",   value: "icecream" }
+    ]
+  },
+  {
+    title: "Combien de fois par an fréquentes-tu Beavertails ?",
+    answers: [
+      { label: "Une fois",      image: "images-fr/once-fr.png",         value: "once" },
+      { label: "Deux fois",     image: "images-fr/twice-fr.png",        value: "twice" },
+      { label: "Trois fois",    image: "images-fr/three-times-fr.png",  value: "three_times" },
+      { label: "Quatre fois +", image: "images-fr/four-or-more-fr.png", value: "four_or_more" }
+    ]
+  },
+  {
+    title: "Pourquoi êtes-vous dans la région ?",
+    answers: [
+      { label: "Travail",    image: "images-fr/work-fr.png",     value: "work" },
+      { label: "École",      image: "images-fr/school-fr.png",   value: "school" },
+      { label: "Vacances",   image: "images-fr/vacation-fr.png", value: "vacation" },
+      { label: "Congé",      image: "images-fr/day-off-fr.png",  value: "day_off" }
+    ]
+  },
+  {
+    title: "D'où viens-tu ?",
+    answers: [
+      { label: "Cette ville",    image: "images-fr/this-region-fr.png",   value: "this_city" },
+      { label: "Cette province", image: "images-fr/this-province-fr.png", value: "this_province" },
+      { label: "Canada",         image: "images-fr/canada-fr.png",        value: "canada" },
+      { label: "International",  image: "images-fr/international-fr.png", value: "international" }
+    ]
+  }
+];
+
+const params = new URLSearchParams(window.location.search);
+const storeLocation = params.get("store") || "unknown";
+let lang = params.get("lang") || "en";
+
+let questions = lang === "fr" ? questionsFR : questionsEN;
 
 let currentQuestion = 0;
 let responses = [];
@@ -139,12 +95,31 @@ const questionScreen = document.getElementById("question-screen");
 const resultScreen = document.getElementById("result-screen");
 const dots = document.querySelectorAll(".dot");
 const progressText = document.querySelector(".progress-text");
+const langToggleBtn = document.getElementById("lang-toggle");
+
+function setLanguage(newLang) {
+  lang = newLang;
+  questions = lang === "fr" ? questionsFR : questionsEN;
+  langToggleBtn.textContent = lang === "fr" ? "EN" : "FR";
+
+  currentQuestion = 0;
+  responses = [];
+  hasSubmitted = false;
+  acceptingAnswer = true;
+  resultScreen.classList.add("hidden");
+  questionScreen.classList.remove("hidden");
+
+  showQuestion();
+}
+
+langToggleBtn.addEventListener("click", function() {
+  setLanguage(lang === "fr" ? "en" : "fr");
+});
 
 function showQuestion() {
   acceptingAnswer = true;
 
   const question = questions[currentQuestion];
-
   questionTitle.textContent = question.title;
   answerGrid.innerHTML = "";
 
@@ -153,9 +128,7 @@ function showQuestion() {
     card.classList.add("answer-card");
     card.type = "button";
 
-    card.innerHTML = `
-      <img src="${answer.image}" alt="${answer.label}">
-    `;
+    card.innerHTML = `<img src="${answer.image}" alt="${answer.label}">`;
 
     card.addEventListener("click", function() {
       saveAnswer(answer.value);
@@ -168,10 +141,7 @@ function showQuestion() {
 }
 
 function saveAnswer(answerValue) {
-  if (!acceptingAnswer) {
-    return;
-  }
-
+  if (!acceptingAnswer) return;
   acceptingAnswer = false;
 
   responses.push({
@@ -179,8 +149,6 @@ function saveAnswer(answerValue) {
     question: questions[currentQuestion].title,
     answer: answerValue
   });
-
-  console.log("Saved answer:", responses);
 
   currentQuestion++;
 
@@ -211,11 +179,12 @@ function finishSurvey() {
   resultScreen.classList.remove("hidden");
 
   const surveyData = {
-    personality:   responses[0] ? responses[0].answer : "",
-    timesPerYear:  responses[1] ? responses[1].answer : "",
-    newProduct:    responses[2] ? responses[2].answer : "",
-    favoritePlace: responses[3] ? responses[3].answer : "",
-    areaFrequency: responses[4] ? responses[4].answer : ""
+    store:        storeLocation,
+    lang:         lang,
+    purchase:     responses[0] ? responses[0].answer : "",
+    timesPerYear: responses[1] ? responses[1].answer : "",
+    reasonInArea: responses[2] ? responses[2].answer : "",
+    origin:       responses[3] ? responses[3].answer : ""
   };
 
   const url = GOOGLE_SCRIPT_URL + "?" + new URLSearchParams(surveyData).toString();
@@ -238,5 +207,8 @@ function restartSurvey() {
 
   showQuestion();
 }
+
+// Set initial button label
+langToggleBtn.textContent = lang === "fr" ? "EN" : "FR";
 
 showQuestion();

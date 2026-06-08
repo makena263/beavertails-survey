@@ -1,11 +1,17 @@
+@font-face {
+  font-family: 'Bogart';
+  src: url('fonts/Bogart-Bold.otf') format('opentype');
+  font-weight: bold;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  background-color: #c92d45;
-  font-family: Arial, sans-serif;
+  background-color: #ba0c2f;
+  font-family: 'Poppins', sans-serif;
   color: white;
 }
 
@@ -17,6 +23,19 @@ body {
   padding: 42px 26px 28px;
   display: flex;
   flex-direction: column;
+}
+
+#lang-toggle {
+  background-color: #eee8d8;
+  color: #ba0c2f;
+  border: none;
+  border-radius: 999px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 12px;
+  cursor: pointer;
+  margin-left: auto;
 }
 
 .progress-row {
@@ -46,8 +65,8 @@ body {
 }
 
 h1 {
-  font-family: Georgia, serif;
-  font-size: 28px;
+  font-family: 'Bogart', serif;
+  font-size: 30px;
   line-height: 1.2;
   text-align: center;
   margin: 0 0 24px;
@@ -87,6 +106,8 @@ h1 {
 
   border: 4px solid #2e2e2e;
   border-radius: 16px;
+  outline: 2px solid #2e2e2e;
+  outline-offset: -2px;
 }
 
 footer {
