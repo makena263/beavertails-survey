@@ -78,9 +78,9 @@ const questionsFR = [
 
 const params = new URLSearchParams(window.location.search);
 const storeLocation = params.get("store") || "unknown";
-let lang = params.get("lang") || "en";
+let lang = params.get("lang") || null;
 
-let questions = lang === "fr" ? questionsFR : questionsEN;
+let questions = questionsEN;
 
 let currentQuestion = 0;
 let responses = [];
@@ -96,11 +96,27 @@ const resultScreen = document.getElementById("result-screen");
 const dots = document.querySelectorAll(".dot");
 const progressText = document.querySelector(".progress-text");
 const langToggleBtn = document.getElementById("lang-toggle");
+const resultTitle = document.getElementById("result-title");
+const resultBody = document.getElementById("result-body");
+const resultRestart = document.getElementById("result-restart");
+
+function updateResultScreen() {
+  if (lang === "fr") {
+    resultTitle.textContent = "Merci !";
+    resultBody.textContent = "Tes réponses ont été enregistrées.";
+    resultRestart.textContent = "Recommencer";
+  } else {
+    resultTitle.textContent = "Thank you!";
+    resultBody.textContent = "Your answers have been recorded.";
+    resultRestart.textContent = "Start over";
+  }
+}
 
 function setLanguage(newLang) {
   lang = newLang;
   questions = lang === "fr" ? questionsFR : questionsEN;
   langToggleBtn.textContent = lang === "fr" ? "EN" : "FR";
+  updateResultScreen();
 
   currentQuestion = 0;
   responses = [];
@@ -177,6 +193,7 @@ function finishSurvey() {
 
   questionScreen.classList.add("hidden");
   resultScreen.classList.remove("hidden");
+  updateResultScreen();
 
   const surveyData = {
     store:        storeLocation,
@@ -208,7 +225,25 @@ function restartSurvey() {
   showQuestion();
 }
 
-// Set initial button label
-langToggleBtn.textContent = lang === "fr" ? "EN" : "FR";
+// Detect language: URL param takes priority, otherwise check IP region
+if (lang) {
+  applyLanguage(lang);
+} else {
+  fetch("https://ip-api.com/json/?fields=regionName")
+    .then(function(res) { return res.json(); })
+    .then(function(data) {
+      const region = (data.regionName || "").toLowerCase();
+      applyLanguage(region.includes("quebec") ? "fr" : "en");
+    })
+    .catch(function() {
+      applyLanguage("en");
+    });
+}
 
-showQuestion();
+function applyLanguage(newLang) {
+  lang = newLang;
+  questions = lang === "fr" ? questionsFR : questionsEN;
+  langToggleBtn.textContent = lang === "fr" ? "EN" : "FR";
+  updateResultScreen();
+  showQuestion();
+}
