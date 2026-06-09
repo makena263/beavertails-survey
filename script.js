@@ -91,7 +91,7 @@ const resultRestart = document.getElementById("result-restart");
 function updateResultScreen() {
   if (lang === "fr") {
     resultTitle.textContent = "Merci !";
-    resultBody.textContent = "Tes réponses ont été enregistrées.";
+    resultBody.textContent = "Vos réponses ont été enregistrées.";
     resultRestart.textContent = "Recommencer";
     logo.src = "images-fr/beavertails-logo-fr.png";
     backBtn.textContent = "← Retour";
