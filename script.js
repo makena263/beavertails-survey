@@ -1,29 +1,11 @@
 const questionsEN = [
   {
-    title: "Which items would you purchase?",
-    answers: [
-      { label: "BeaverTails", image: "images/beavertail.png", value: "beavertails" },
-      { label: "BeaverDog",   image: "images/beaverdog.png",  value: "beaverdog" },
-      { label: "Poutine",     image: "images/poutine.png",    value: "poutine" },
-      { label: "Ice Cream",   image: "images/icecream.png",   value: "icecream" }
-    ]
-  },
-  {
     title: "How many times a year do you visit BeaverTails?",
     answers: [
-      { label: "Once",        image: "images/once.png",         value: "once" },
-      { label: "Twice",       image: "images/twice.png",        value: "twice" },
-      { label: "Three times", image: "images/three-times.png",  value: "three_times" },
-      { label: "Four or more",image: "images/four-or-more.png", value: "four_or_more" }
-    ]
-  },
-  {
-    title: "Why are you in the area?",
-    answers: [
-      { label: "Work",     image: "images/work.png",     value: "work" },
-      { label: "School",   image: "images/school.png",   value: "school" },
-      { label: "Vacation", image: "images/vacation.png", value: "vacation" },
-      { label: "Day off",  image: "images/day-off.png",  value: "day_off" }
+      { label: "Once",         image: "images/once.png",         value: "once" },
+      { label: "Twice",        image: "images/twice.png",        value: "twice" },
+      { label: "Three times",  image: "images/three-times.png",  value: "three_times" },
+      { label: "Four or more", image: "images/four-or-more.png", value: "four_or_more" }
     ]
   },
   {
@@ -34,19 +16,21 @@ const questionsEN = [
       { label: "Canada",        image: "images/canada.png",        value: "canada" },
       { label: "International", image: "images/international.png", value: "international" }
     ]
+  },
+  {
+    title: "Why are you in the area?",
+    textOnly: true,
+    answers: [
+      { label: "Vacation",     value: "vacation" },
+      { label: "Day off",      value: "day_off" },
+      { label: "Work / School",value: "work_school" },
+      { label: "Celebration",  value: "celebration" },
+      { label: "Date",         value: "date" }
+    ]
   }
 ];
 
 const questionsFR = [
-  {
-    title: "Quels articles achètes-tu?",
-    answers: [
-      { label: "BeaverTails", image: "images-fr/beavertail-fr.png", value: "beavertails" },
-      { label: "BeaverDog",   image: "images-fr/beaverdog-fr.png",  value: "beaverdog" },
-      { label: "Poutine",     image: "images-fr/poutine-fr.png",    value: "poutine" },
-      { label: "Crème glacée",image: "images-fr/icecream-fr.png",   value: "icecream" }
-    ]
-  },
   {
     title: "Combien de fois par an fréquentes-tu Beavertails ?",
     answers: [
@@ -57,21 +41,23 @@ const questionsFR = [
     ]
   },
   {
-    title: "Pourquoi êtes-vous dans la région ?",
-    answers: [
-      { label: "Travail",    image: "images-fr/work-fr.png",     value: "work" },
-      { label: "École",      image: "images-fr/school-fr.png",   value: "school" },
-      { label: "Vacances",   image: "images-fr/vacation-fr.png", value: "vacation" },
-      { label: "Congé",      image: "images-fr/day-off-fr.png",  value: "day_off" }
-    ]
-  },
-  {
     title: "D'où viens-tu ?",
     answers: [
       { label: "Cette ville",    image: "images-fr/this-region-fr.png",   value: "this_city" },
       { label: "Cette province", image: "images-fr/this-province-fr.png", value: "this_province" },
       { label: "Canada",         image: "images-fr/canada-fr.png",        value: "canada" },
       { label: "International",  image: "images-fr/international-fr.png", value: "international" }
+    ]
+  },
+  {
+    title: "Pourquoi êtes-vous dans la région ?",
+    textOnly: true,
+    answers: [
+      { label: "Vacances",          value: "vacation" },
+      { label: "Congé",             value: "day_off" },
+      { label: "Travail / École",   value: "work_school" },
+      { label: "Célébration",       value: "celebration" },
+      { label: "Rendez-vous",       value: "date" }
     ]
   }
 ];
@@ -98,9 +84,7 @@ const dots = document.querySelectorAll(".dot");
 const progressText = document.querySelector(".progress-text");
 const langToggleBtn = document.getElementById("lang-toggle");
 const logo = document.getElementById("logo");
-const nextBtn = document.getElementById("next-btn");
 const backBtn = document.getElementById("back-btn");
-let multiSelections = [];
 const resultTitle = document.getElementById("result-title");
 const resultBody = document.getElementById("result-body");
 const resultRestart = document.getElementById("result-restart");
@@ -111,14 +95,12 @@ function updateResultScreen() {
     resultBody.textContent = "Tes réponses ont été enregistrées.";
     resultRestart.textContent = "Recommencer";
     logo.src = "images-fr/beavertails-logo-fr.png";
-    nextBtn.textContent = "Suivant →";
     backBtn.textContent = "← Retour";
   } else {
     resultTitle.textContent = "Thank you!";
     resultBody.textContent = "Your answers have been recorded.";
     resultRestart.textContent = "Start over";
     logo.src = "images/beavertails-logo.png";
-    nextBtn.textContent = "Next →";
     backBtn.textContent = "← Back";
   }
 }
@@ -146,52 +128,33 @@ langToggleBtn.addEventListener("click", function() {
 
 function showQuestion() {
   acceptingAnswer = true;
-  multiSelections = [];
-  nextBtn.style.visibility = currentQuestion === 0 ? "visible" : "hidden";
   backBtn.style.visibility = currentQuestion === 0 ? "hidden" : "visible";
 
   const question = questions[currentQuestion];
-  const isMulti = currentQuestion === 0;
   const saved = savedAnswers[currentQuestion];
-
-  // Restore multi-select state
-  if (isMulti && saved) {
-    multiSelections = saved.split(",");
-  }
 
   questionTitle.textContent = question.title;
   answerGrid.innerHTML = "";
+  answerGrid.classList.toggle("text-grid", !!question.textOnly);
 
   question.answers.forEach(function(answer) {
     const card = document.createElement("button");
-    card.classList.add("answer-card");
+    card.classList.add(question.textOnly ? "text-card" : "answer-card");
     card.type = "button";
 
-    card.innerHTML = `<img src="${answer.image}" alt="${answer.label}">`;
-
-    // Restore visual selected state
-    if (isMulti && multiSelections.includes(answer.value)) {
-      card.classList.add("selected");
-    } else if (!isMulti && saved === answer.value) {
-      card.classList.add("selected");
-    }
-
-    if (isMulti) {
-      card.addEventListener("click", function() {
-        if (!acceptingAnswer) return;
-        card.classList.toggle("selected");
-        const idx = multiSelections.indexOf(answer.value);
-        if (idx === -1) {
-          multiSelections.push(answer.value);
-        } else {
-          multiSelections.splice(idx, 1);
-        }
-      });
+    if (question.textOnly) {
+      card.textContent = answer.label;
     } else {
-      card.addEventListener("click", function() {
-        saveAnswer(answer.value);
-      });
+      card.innerHTML = `<img src="${answer.image}" alt="${answer.label}">`;
     }
+
+    if (saved === answer.value) {
+      card.classList.add("selected");
+    }
+
+    card.addEventListener("click", function() {
+      saveAnswer(answer.value);
+    });
 
     answerGrid.appendChild(card);
   });
@@ -203,12 +166,6 @@ function goBack() {
   if (currentQuestion === 0) return;
   currentQuestion--;
   showQuestion();
-}
-
-function submitMultiSelect() {
-  const value = multiSelections.length > 0 ? multiSelections.join(",") : (savedAnswers[0] || "");
-  if (!value) return;
-  saveAnswer(value);
 }
 
 function saveAnswer(answerValue) {
@@ -255,10 +212,9 @@ function finishSurvey() {
   const surveyData = {
     store:        storeLocation,
     lang:         lang,
-    purchase:     responses[0] ? responses[0].answer : "",
-    timesPerYear: responses[1] ? responses[1].answer : "",
-    reasonInArea: responses[2] ? responses[2].answer : "",
-    origin:       responses[3] ? responses[3].answer : ""
+    timesPerYear: responses[0] ? responses[0].answer : "",
+    origin:       responses[1] ? responses[1].answer : "",
+    reasonInArea: responses[2] ? responses[2].answer : ""
   };
 
   const url = GOOGLE_SCRIPT_URL + "?" + new URLSearchParams(surveyData).toString();
