@@ -99,7 +99,7 @@ h1 {
 
 .answer-card.selected img {
   border-color: #eee8d8;
-  box-shadow: 0 0 0 3px #eee8d8;
+  box-shadow: 0 0 0 2px #eee8d8;
 }
 
 #nav-row {
@@ -108,6 +108,31 @@ h1 {
   align-items: center;
   margin-top: 24px;
   min-height: 48px;
+}
+
+.text-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.text-card {
+  width: 100%;
+  background: none;
+  border: 2px solid #eee8d8;
+  border-radius: 12px;
+  color: #eee8d8;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.text-card:hover, .text-card.selected {
+  background-color: #eee8d8;
+  color: #ba0c2f;
 }
 
 #next-btn, #back-btn {
