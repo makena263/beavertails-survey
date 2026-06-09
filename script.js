@@ -247,6 +247,7 @@ function applyLanguage(newLang) {
   lang = newLang;
   questions = lang === "fr" ? questionsFR : questionsEN;
   langToggleBtn.textContent = lang === "fr" ? "EN" : "FR";
+  logo.src = lang === "fr" ? "images-fr/beavertails-logo-fr.png" : "images/beavertails-logo.png";
   updateResultScreen();
   showQuestion();
 }
