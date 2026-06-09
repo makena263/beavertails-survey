@@ -1,6 +1,6 @@
 const questionsEN = [
   {
-    title: "How many times a year do you visit BeaverTails?",
+    title: "How many times/year do you visit BeaverTails?",
     answers: [
       { label: "Once",         image: "images/once.png",         value: "once" },
       { label: "Twice",        image: "images/twice.png",        value: "twice" },
@@ -81,7 +81,6 @@ const answerGrid = document.getElementById("answer-grid");
 const questionScreen = document.getElementById("question-screen");
 const resultScreen = document.getElementById("result-screen");
 const dots = document.querySelectorAll(".dot");
-const progressText = document.querySelector(".progress-text");
 const langToggleBtn = document.getElementById("lang-toggle");
 const logo = document.getElementById("logo");
 const backBtn = document.getElementById("back-btn");
@@ -110,15 +109,6 @@ function setLanguage(newLang) {
   questions = lang === "fr" ? questionsFR : questionsEN;
   langToggleBtn.textContent = lang === "fr" ? "EN" : "FR";
   updateResultScreen();
-
-  currentQuestion = 0;
-  responses = [];
-  savedAnswers = {};
-  hasSubmitted = false;
-  acceptingAnswer = true;
-  resultScreen.classList.add("hidden");
-  questionScreen.classList.remove("hidden");
-
   showQuestion();
 }
 
@@ -198,7 +188,6 @@ function updateProgress() {
     }
   });
 
-  progressText.textContent = `${currentQuestion + 1}/${questions.length}`;
 }
 
 function finishSurvey() {
