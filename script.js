@@ -84,6 +84,7 @@ let questions = questionsEN;
 
 let currentQuestion = 0;
 let responses = [];
+let savedAnswers = {};
 let hasSubmitted = false;
 let acceptingAnswer = true;
 
@@ -130,6 +131,7 @@ function setLanguage(newLang) {
 
   currentQuestion = 0;
   responses = [];
+  savedAnswers = {};
   hasSubmitted = false;
   acceptingAnswer = true;
   resultScreen.classList.add("hidden");
@@ -150,6 +152,12 @@ function showQuestion() {
 
   const question = questions[currentQuestion];
   const isMulti = currentQuestion === 0;
+  const saved = savedAnswers[currentQuestion];
+
+  // Restore multi-select state
+  if (isMulti && saved) {
+    multiSelections = saved.split(",");
+  }
 
   questionTitle.textContent = question.title;
   answerGrid.innerHTML = "";
@@ -161,6 +169,13 @@ function showQuestion() {
 
     card.innerHTML = `<img src="${answer.image}" alt="${answer.label}">`;
 
+    // Restore visual selected state
+    if (isMulti && multiSelections.includes(answer.value)) {
+      card.classList.add("selected");
+    } else if (!isMulti && saved === answer.value) {
+      card.classList.add("selected");
+    }
+
     if (isMulti) {
       card.addEventListener("click", function() {
         if (!acceptingAnswer) return;
@@ -171,7 +186,6 @@ function showQuestion() {
         } else {
           multiSelections.splice(idx, 1);
         }
-        // next always visible on Q1
       });
     } else {
       card.addEventListener("click", function() {
@@ -188,25 +202,26 @@ function showQuestion() {
 function goBack() {
   if (currentQuestion === 0) return;
   currentQuestion--;
-  responses.pop();
   showQuestion();
 }
 
 function submitMultiSelect() {
-  if (multiSelections.length === 0) return;
-  saveAnswer(multiSelections.join(","));
-  nextBtn.classList.add("hidden");
+  const value = multiSelections.length > 0 ? multiSelections.join(",") : (savedAnswers[0] || "");
+  if (!value) return;
+  saveAnswer(value);
 }
 
 function saveAnswer(answerValue) {
   if (!acceptingAnswer) return;
   acceptingAnswer = false;
 
-  responses.push({
+  savedAnswers[currentQuestion] = answerValue;
+
+  responses[currentQuestion] = {
     questionNumber: currentQuestion + 1,
     question: questions[currentQuestion].title,
     answer: answerValue
-  });
+  };
 
   currentQuestion++;
 
@@ -258,6 +273,7 @@ function finishSurvey() {
 function restartSurvey() {
   currentQuestion = 0;
   responses = [];
+  savedAnswers = {};
   hasSubmitted = false;
   acceptingAnswer = true;
 
