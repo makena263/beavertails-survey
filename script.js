@@ -96,6 +96,7 @@ const resultScreen = document.getElementById("result-screen");
 const dots = document.querySelectorAll(".dot");
 const progressText = document.querySelector(".progress-text");
 const langToggleBtn = document.getElementById("lang-toggle");
+const logo = document.getElementById("logo");
 const resultTitle = document.getElementById("result-title");
 const resultBody = document.getElementById("result-body");
 const resultRestart = document.getElementById("result-restart");
@@ -105,10 +106,12 @@ function updateResultScreen() {
     resultTitle.textContent = "Merci !";
     resultBody.textContent = "Tes réponses ont été enregistrées.";
     resultRestart.textContent = "Recommencer";
+    logo.src = "images-fr/beavertails-logo-fr.png";
   } else {
     resultTitle.textContent = "Thank you!";
     resultBody.textContent = "Your answers have been recorded.";
     resultRestart.textContent = "Start over";
+    logo.src = "images/beavertails-logo.png";
   }
 }
 
