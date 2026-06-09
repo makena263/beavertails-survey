@@ -69,7 +69,7 @@ h1 {
   font-size: 34px;
   line-height: 1;
   text-align: center;
-  margin: 1 0 16px;
+  margin: 0 0 16px;
 }
 
 .answer-grid {
@@ -130,9 +130,16 @@ h1 {
   text-align: center;
 }
 
-.text-card:hover, .text-card.selected {
+.text-card.selected {
   background-color: #eee8d8;
   color: #ba0c2f;
+}
+
+@media (hover: hover) {
+  .text-card:hover {
+    background-color: #eee8d8;
+    color: #ba0c2f;
+  }
 }
 
 #next-btn, #back-btn {
