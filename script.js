@@ -9,7 +9,7 @@ const questionsEN = [
     ]
   },
   {
-    title: "What best desrcibes where you live?",
+    title: "What best describes where you live?",
     answers: [
       { label: "This city",     image: "images/this-region.png",   value: "this_city" },
       { label: "This province", image: "images/this-province.png", value: "this_province" },
