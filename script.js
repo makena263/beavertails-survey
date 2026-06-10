@@ -21,8 +21,7 @@ const questionsEN = [
     title: "What are you doing today?",
     textOnly: true,
     answers: [
-      { label: "Vacation",    value: "vacation" },
-      { label: "Day off",     value: "day_off" },
+      { label: "Vacation/Day off",    value: "vacation" },
       { label: "Celebration", value: "celebration" },
       { label: "On a date",   value: "date" },
       { label: "School",      value: "school" },
@@ -54,8 +53,7 @@ const questionsFR = [
     title: "Que fais-tu aujourd'hui?",
     textOnly: true,
     answers: [
-      { label: "Vacances",      value: "vacation" },
-      { label: "Jour de congé",         value: "day_off" },
+      { label: "Vacances/Jour de congé"",      value: "vacation" },
       { label: "Célébration",   value: "celebration" },
       { label: "Sortie en couple",   value: "date" },
       { label: "École",         value: "school" },
