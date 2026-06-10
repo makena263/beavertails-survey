@@ -66,6 +66,7 @@ const questionsFR = [
 
 const params = new URLSearchParams(window.location.search);
 const storeLocation = params.get("store") || "unknown";
+const method = params.get("method") || "unknown";
 let lang = params.get("lang") || null;
 
 let questions = questionsEN;
@@ -211,6 +212,7 @@ function finishSurvey() {
 
   const surveyData = {
     store:        storeLocation,
+    method:       method,
     lang:         lang,
     timesPerYear: responses[0] ? responses[0].answer : "",
     origin:       responses[1] ? responses[1].answer : "",
