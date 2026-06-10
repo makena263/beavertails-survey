@@ -18,10 +18,11 @@ const questionsEN = [
     ]
   },
   {
-    title: "What are you doing today?",
+    title: "Why are you in the area?",
     textOnly: true,
     answers: [
-      { label: "Vacation/Day off",    value: "vacation" },
+      { label: "Vacation",    value: "vacation" },
+      { label: "Day off",     value: "day_off" },
       { label: "Celebration", value: "celebration" },
       { label: "On a date",   value: "date" },
       { label: "School",      value: "school" },
@@ -32,7 +33,7 @@ const questionsEN = [
 
 const questionsFR = [
   {
-    title: "Combien de fois par année visite-tu Queue de Castor?",
+    title: "Combien de fois par an fréquentes-tu Beavertails ?",
     answers: [
       { label: "Une fois",      image: "images-fr/once-fr.png",         value: "once" },
       { label: "Deux fois",     image: "images-fr/twice-fr.png",        value: "twice" },
@@ -41,7 +42,7 @@ const questionsFR = [
     ]
   },
   {
-    title: "D'où viens-tu?",
+    title: "D'où viens-tu ?",
     answers: [
       { label: "Cette ville",    image: "images-fr/this-region-fr.png",   value: "this_city" },
       { label: "Cette province", image: "images-fr/this-province-fr.png", value: "this_province" },
@@ -50,12 +51,13 @@ const questionsFR = [
     ]
   },
   {
-    title: "Que fais-tu aujourd'hui?",
+    title: "Pourquoi êtes-vous dans la région ?",
     textOnly: true,
     answers: [
-      { label: "Vacances/Jour de congé"",      value: "vacation" },
+      { label: "Vacances",      value: "vacation" },
+      { label: "Congé",         value: "day_off" },
       { label: "Célébration",   value: "celebration" },
-      { label: "Sortie en couple",   value: "date" },
+      { label: "Rendez-vous",   value: "date" },
       { label: "École",         value: "school" },
       { label: "Travail",       value: "work" }
     ]
@@ -109,16 +111,8 @@ function setLanguage(newLang) {
   lang = newLang;
   questions = lang === "fr" ? questionsFR : questionsEN;
   langToggleBtn.textContent = lang === "fr" ? "EN" : "FR";
+  logo.src = lang === "fr" ? "images-fr/beavertails-logo-fr.png" : "images/beavertails-logo.png";
   updateResultScreen();
-
-  currentQuestion = 0;
-  responses = [];
-  savedAnswers = {};
-  hasSubmitted = false;
-  acceptingAnswer = true;
-  resultScreen.classList.add("hidden");
-  questionScreen.classList.remove("hidden");
-
   showQuestion();
 }
 
