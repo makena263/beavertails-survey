@@ -32,7 +32,7 @@ const questionsEN = [
 
 const questionsFR = [
   {
-    title: "Combien de fois par année visite-tu Queue de Castor?",
+    title: "Combien de fois par année visite-tu Queues de Castor?",
     answers: [
       { label: "Une fois",      image: "images-fr/once-fr.png",         value: "once" },
       { label: "Deux fois",     image: "images-fr/twice-fr.png",        value: "twice" },
