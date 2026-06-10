@@ -21,11 +21,12 @@ const questionsEN = [
     title: "Why are you in the area?",
     textOnly: true,
     answers: [
-      { label: "Vacation",     value: "vacation" },
-      { label: "Day off",      value: "day_off" },
-      { label: "Work / School",value: "work_school" },
-      { label: "Celebration",  value: "celebration" },
-      { label: "Date",         value: "date" }
+      { label: "Vacation",    value: "vacation" },
+      { label: "Day off",     value: "day_off" },
+      { label: "Celebration", value: "celebration" },
+      { label: "On a date",   value: "date" },
+      { label: "School",      value: "school" },
+      { label: "Work",        value: "work" }
     ]
   }
 ];
@@ -53,11 +54,12 @@ const questionsFR = [
     title: "Pourquoi êtes-vous dans la région ?",
     textOnly: true,
     answers: [
-      { label: "Vacances",          value: "vacation" },
-      { label: "Congé",             value: "day_off" },
-      { label: "Travail / École",   value: "work_school" },
-      { label: "Célébration",       value: "celebration" },
-      { label: "Rendez-vous",       value: "date" }
+      { label: "Vacances",      value: "vacation" },
+      { label: "Congé",         value: "day_off" },
+      { label: "Célébration",   value: "celebration" },
+      { label: "Rendez-vous",   value: "date" },
+      { label: "École",         value: "school" },
+      { label: "Travail",       value: "work" }
     ]
   }
 ];
@@ -109,6 +111,15 @@ function setLanguage(newLang) {
   questions = lang === "fr" ? questionsFR : questionsEN;
   langToggleBtn.textContent = lang === "fr" ? "EN" : "FR";
   updateResultScreen();
+
+  currentQuestion = 0;
+  responses = [];
+  savedAnswers = {};
+  hasSubmitted = false;
+  acceptingAnswer = true;
+  resultScreen.classList.add("hidden");
+  questionScreen.classList.remove("hidden");
+
   showQuestion();
 }
 
