@@ -9,7 +9,7 @@ const questionsEN = [
     ]
   },
   {
-    title: "Where are you from?",
+    title: "What best desrcibes where you live?",
     answers: [
       { label: "This city",     image: "images/this-region.png",   value: "this_city" },
       { label: "This province", image: "images/this-province.png", value: "this_province" },
@@ -18,7 +18,7 @@ const questionsEN = [
     ]
   },
   {
-    title: "Why are you in the area?",
+    title: "What are you doing today?",
     textOnly: true,
     answers: [
       { label: "Vacation / Day off", value: "vacation_day_off" },
@@ -32,7 +32,7 @@ const questionsEN = [
 
 const questionsFR = [
   {
-    title: "Combien de fois par an fréquentes-tu Beavertails ?",
+    title: "Combien de fois par an visite-tu Queue de Castor?",
     answers: [
       { label: "Une fois",      image: "images-fr/once-fr.png",         value: "once" },
       { label: "Deux fois",     image: "images-fr/twice-fr.png",        value: "twice" },
@@ -41,7 +41,7 @@ const questionsFR = [
     ]
   },
   {
-    title: "D'où viens-tu ?",
+    title: "Qu'est-ce qui décrit le mieux l'endroit où tu vis?",
     answers: [
       { label: "Cette ville",    image: "images-fr/this-region-fr.png",   value: "this_city" },
       { label: "Cette province", image: "images-fr/this-province-fr.png", value: "this_province" },
@@ -50,12 +50,12 @@ const questionsFR = [
     ]
   },
   {
-    title: "Pourquoi êtes-vous dans la région ?",
+    title: "Tu fais quoi aujourd’hui?",
     textOnly: true,
     answers: [
-      { label: "Vacances / Congé", value: "vacation_day_off" },
+      { label: "Vacances / Jour de congé", value: "vacation_day_off" },
       { label: "Célébration",   value: "celebration" },
-      { label: "Rendez-vous",   value: "date" },
+      { label: "Sortie en couple",   value: "date" },
       { label: "École",         value: "school" },
       { label: "Travail",       value: "work" }
     ]
