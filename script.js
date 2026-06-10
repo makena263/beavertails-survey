@@ -21,8 +21,7 @@ const questionsEN = [
     title: "Why are you in the area?",
     textOnly: true,
     answers: [
-      { label: "Vacation",    value: "vacation" },
-      { label: "Day off",     value: "day_off" },
+      { label: "Vacation / Day off", value: "vacation_day_off" },
       { label: "Celebration", value: "celebration" },
       { label: "On a date",   value: "date" },
       { label: "School",      value: "school" },
@@ -54,8 +53,7 @@ const questionsFR = [
     title: "Pourquoi êtes-vous dans la région ?",
     textOnly: true,
     answers: [
-      { label: "Vacances",      value: "vacation" },
-      { label: "Congé",         value: "day_off" },
+      { label: "Vacances / Congé", value: "vacation_day_off" },
       { label: "Célébration",   value: "celebration" },
       { label: "Rendez-vous",   value: "date" },
       { label: "École",         value: "school" },
