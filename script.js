@@ -18,7 +18,7 @@ const questionsEN = [
     ]
   },
   {
-    title: "Why are you in the area?",
+    title: "What are you doing today?",
     textOnly: true,
     answers: [
       { label: "Vacation",    value: "vacation" },
@@ -33,7 +33,7 @@ const questionsEN = [
 
 const questionsFR = [
   {
-    title: "Combien de fois par an fréquentes-tu Beavertails ?",
+    title: "Combien de fois par année visite-tu Queue de Castor?",
     answers: [
       { label: "Une fois",      image: "images-fr/once-fr.png",         value: "once" },
       { label: "Deux fois",     image: "images-fr/twice-fr.png",        value: "twice" },
@@ -42,7 +42,7 @@ const questionsFR = [
     ]
   },
   {
-    title: "D'où viens-tu ?",
+    title: "D'où viens-tu?",
     answers: [
       { label: "Cette ville",    image: "images-fr/this-region-fr.png",   value: "this_city" },
       { label: "Cette province", image: "images-fr/this-province-fr.png", value: "this_province" },
@@ -51,13 +51,13 @@ const questionsFR = [
     ]
   },
   {
-    title: "Pourquoi êtes-vous dans la région ?",
+    title: "Que fais-tu aujourd'hui?",
     textOnly: true,
     answers: [
       { label: "Vacances",      value: "vacation" },
-      { label: "Congé",         value: "day_off" },
+      { label: "Jour de congé",         value: "day_off" },
       { label: "Célébration",   value: "celebration" },
-      { label: "Rendez-vous",   value: "date" },
+      { label: "Sortie en couple",   value: "date" },
       { label: "École",         value: "school" },
       { label: "Travail",       value: "work" }
     ]
