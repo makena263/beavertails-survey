@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>BeaverTails Survey</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="survey-container">
+
+    <div class="progress-row">
+      <div class="dot active"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <button id="lang-toggle">FR</button>
+    </div>
+
+    <section id="question-screen">
+      <h1 id="question-title">Loading question...</h1>
+
+      <div class="answer-grid" id="answer-grid">
+        <!-- JavaScript adds answer cards here -->
+      </div>
+      <div id="nav-row">
+        <button id="back-btn" onclick="goBack()">← Back</button>
+        <span></span>
+      </div>
+    </section>
+
+    <section id="result-screen" class="hidden">
+      <h1 id="result-title">Thank you!</h1>
+      <p id="result-body">Your answers have been recorded.</p>
+      <button id="result-restart" onclick="restartSurvey()">Start over</button>
+    </section>
+
+    <footer>
+      <img id="logo" src="images/beavertails-logo.png" alt="BeaverTails logo" class="logo" />
+    </footer>
+
+  </main>
+ 
+
+  <script src="script.js"></script>
+</body>
+</html>
