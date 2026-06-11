@@ -24,7 +24,7 @@ const questionsEN = [
       { label: "Vacation / Day off", value: "vacation_day_off" },
       { label: "Celebration", value: "celebration" },
       { label: "On a date",   value: "date" },
-      { label: "School",      value: "school" },
+      { label: "School / School Trip",      value: "school" },
       { label: "Work",        value: "work" }
     ]
   }
@@ -56,7 +56,7 @@ const questionsFR = [
       { label: "Vacances / Jour de congé", value: "vacation_day_off" },
       { label: "Célébration",   value: "celebration" },
       { label: "Sortie en couple",   value: "date" },
-      { label: "École",         value: "school" },
+      { label: "École / sortie scolaire",         value: "school" },
       { label: "Travail",       value: "work" }
     ]
   }
