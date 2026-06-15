@@ -1,6 +1,6 @@
 const questionsEN = [
   {
-    title: "How many times/year do you visit BeaverTails?",
+    title: "How many BeaverTails do you purchase per year?",
     answers: [
       { label: "Once",         image: "images/once.png",         value: "once" },
       { label: "Twice",        image: "images/twice.png",        value: "twice" },
@@ -24,7 +24,7 @@ const questionsEN = [
       { label: "Vacation / Day off", value: "vacation_day_off" },
       { label: "Celebration", value: "celebration" },
       { label: "On a date",   value: "date" },
-      { label: "School / School Trip",      value: "school" },
+      { label: "School",      value: "school" },
       { label: "Work",        value: "work" }
     ]
   }
