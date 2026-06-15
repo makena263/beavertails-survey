@@ -1,6 +1,6 @@
 const questionsEN = [
   {
-    title: "How many BeaverTails do you purchase per year?",
+    title: "How many times per year do you visit BeaverTails?",
     answers: [
       { label: "Once",         image: "images/once.png",         value: "once" },
       { label: "Twice",        image: "images/twice.png",        value: "twice" },
