@@ -122,7 +122,6 @@ function updateResultScreen() {
   } else {
     resultTitle.textContent = "Thank you!";
     resultBody.textContent = "Your answers have been recorded.";
-    resultRestart.textContent = "Start over";
     reviewLink.textContent = "⭐ Review us on Google";
     logo.src = "images/beavertails-logo.png";
     backBtn.textContent = "← Back";
