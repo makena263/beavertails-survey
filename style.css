@@ -206,7 +206,7 @@ button {
   margin: 0 auto 16px;
   background-color: #eee8d8;
   color: #ba0c2f;
-  border: none;
+  border: 2px solid #2e2e2e;
   border-radius: 999px;
   font-family: 'Poppins', sans-serif;
   font-size: 16px;

@@ -110,14 +110,12 @@ const logo = document.getElementById("logo");
 const backBtn = document.getElementById("back-btn");
 const resultTitle = document.getElementById("result-title");
 const resultBody = document.getElementById("result-body");
-const resultRestart = document.getElementById("result-restart");
 const reviewLink = document.getElementById("review-link");
 
 function updateResultScreen() {
   if (lang === "fr") {
     resultTitle.textContent = "Merci !";
     resultBody.textContent = "Vos réponses ont été enregistrées.";
-    resultRestart.textContent = "Recommencer";
     reviewLink.textContent = "⭐ Évaluez-nous sur Google";
     logo.src = "images-fr/beavertails-logo-fr.png";
     backBtn.textContent = "← Retour";
@@ -269,13 +267,17 @@ function restartSurvey() {
 if (lang) {
   applyLanguage(lang);
 } else {
+  const timeout = setTimeout(function() { applyLanguage("en"); }, 2000);
+
   fetch("https://ip-api.com/json/?fields=regionName")
     .then(function(res) { return res.json(); })
     .then(function(data) {
+      clearTimeout(timeout);
       const region = (data.regionName || "").toLowerCase();
       applyLanguage(region.includes("quebec") ? "fr" : "en");
     })
     .catch(function() {
+      clearTimeout(timeout);
       applyLanguage("en");
     });
 }
