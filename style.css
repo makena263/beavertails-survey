@@ -201,6 +201,21 @@ button {
   font-family: inherit;
 }
 
+.review-button {
+  display: block;
+  margin: 0 auto 16px;
+  background-color: #eee8d8;
+  color: #ba0c2f;
+  border: none;
+  border-radius: 999px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  padding: 12px 22px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 #result-screen button {
   background-color: #f1efe0;
   color: #3a2724;

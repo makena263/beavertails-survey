@@ -75,6 +75,29 @@ let savedAnswers = {};
 let hasSubmitted = false;
 let acceptingAnswer = true;
 
+const REVIEW_LINKS = {
+  "montreal-stpaul":        "",
+  "montreal-delacommune":   "https://getreviewlaunch.com/scan/02/b4f44e64/d2ba4a5f",
+  "dix30":                  "",
+  "old-quebec":             "",
+  "tremblant":              "",
+  "toronto-waterfront":     "",
+  "halifax-waterfront":     "",
+  "ottawa-byward":          "",
+  "tpo":                    "",
+  "tanger":                 "",
+  "blue-mountain":          "",
+  "grand-blend":            "",
+  "canmore":                "",
+  "banff":                  "",
+  "waterton":               "",
+  "niagara-falls-clifton":  "",
+  "niagara-outlet":         "",
+  "calgary-17av":           "",
+  "west-edmonton-mall":     "",
+  "white-rock":             ""
+};
+
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzSfCocHorKKULJc917yttbNuiCNimNhTF3z4-eiGdkerHR7AgC2d0iFsDvfB0AyhytBA/exec";
 
 const questionTitle = document.getElementById("question-title");
@@ -88,20 +111,31 @@ const backBtn = document.getElementById("back-btn");
 const resultTitle = document.getElementById("result-title");
 const resultBody = document.getElementById("result-body");
 const resultRestart = document.getElementById("result-restart");
+const reviewLink = document.getElementById("review-link");
 
 function updateResultScreen() {
   if (lang === "fr") {
     resultTitle.textContent = "Merci !";
     resultBody.textContent = "Vos réponses ont été enregistrées.";
     resultRestart.textContent = "Recommencer";
+    reviewLink.textContent = "⭐ Évaluez-nous sur Google";
     logo.src = "images-fr/beavertails-logo-fr.png";
     backBtn.textContent = "← Retour";
   } else {
     resultTitle.textContent = "Thank you!";
     resultBody.textContent = "Your answers have been recorded.";
     resultRestart.textContent = "Start over";
+    reviewLink.textContent = "⭐ Review us on Google";
     logo.src = "images/beavertails-logo.png";
     backBtn.textContent = "← Back";
+  }
+
+  const link = REVIEW_LINKS[storeLocation];
+  if (link) {
+    reviewLink.href = link;
+    reviewLink.classList.remove("hidden");
+  } else {
+    reviewLink.classList.add("hidden");
   }
 }
 
