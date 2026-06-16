@@ -78,7 +78,7 @@ let acceptingAnswer = true;
 const REVIEW_LINKS = {
   "montreal-stpaul":        "https://search.google.com/local/writereview?placeid=ChIJVT2oLTEbyUwRaMrwdTDZihc",
   "montreal-delacommune":   "https://getreviewlaunch.com/scan/02/b4f44e64/d2ba4a5f",
-  "dix30":                  "",
+  "dix30":                  "https://search.google.com/local/writereview?placeid=ChIJTQ4TARcPyUwRu-hMYXBRQc0",
   "old-quebec-champlain":   "https://search.google.com/local/writereview?placeid=ChIJ-fDBsRWRuEwR04p9vegfIdo",
   "old-quebec-stjean":      "https://search.google.com/local/writereview?placeid=ChIJ6c70TdCVuEwRRCt3BRw7rYE",
   "tremblant-upper":         "https://search.google.com/local/writereview?placeid=ChIJmbVIH9F3z0wRZLpOfPnybmY",
