@@ -76,7 +76,7 @@ let hasSubmitted = false;
 let acceptingAnswer = true;
 
 const REVIEW_LINKS = {
-  "montreal-stpaul":        "",
+  "montreal-stpaul":        "https://www.google.com/search?kgmid=/g/11kn02j2hg&hl=en-CA&q=Queues+de+Castor+-+BeaverTails+(Rue+Saint-Paul+Est)&shem=epsd1,rimspwouoe&shndl=30&source=sh/x/loc/osrp/m5/1&kgs=7468783b59f80dc0#lrd=0x4cc91b312da83d55:0x178ad93075f0ca68,3",
   "montreal-delacommune":   "https://getreviewlaunch.com/scan/02/b4f44e64/d2ba4a5f",
   "dix30":                  "",
   "old-quebec":             "",
