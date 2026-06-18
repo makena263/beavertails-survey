@@ -11,10 +11,10 @@ const questionsEN = [
   {
     title: "What best describes where you live?",
     answers: [
-      { label: "I live here",             image: "images/this-region.png",   value: "local" },
+      { label: "I live here",             image: "images/this-region.png",   value: "this_city" },
       { label: "I live in this province", image: "images/this-province.png", value: "this_province" },
-      { label: "Outside this province",   image: "images/canada.png",        value: "outside_province" },
-      { label: "Tourist",                 image: "images/international.png", value: "tourist" }
+      { label: "Outside this province",   image: "images/canada.png",        value: "canada" },
+      { label: "Tourist",                 image: "images/international.png", value: "international" }
     ]
   },
   {
