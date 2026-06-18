@@ -4,7 +4,7 @@ const questionsEN = [
     answers: [
       { label: "Once",        image: "images/once.png",         value: "once" },
       { label: "2 to 3",      image: "images/twice.png",        value: "2_to_3" },
-      { label: "4 or more",   image: "images/three-times.png",  value: "4_or_more" },
+      { label: "4 or more",   image: "images/three-times.png",  value: "four_or_more" },
       { label: "N/A",         image: "images/four-or-more.png", value: "na" }
     ]
   },
