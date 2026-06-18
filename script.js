@@ -2,19 +2,19 @@ const questionsEN = [
   {
     title: "How many times per year do you visit BeaverTails?",
     answers: [
-      { label: "Once",         image: "images/once.png",         value: "once" },
-      { label: "Twice",        image: "images/twice.png",        value: "twice" },
-      { label: "Three times",  image: "images/three-times.png",  value: "three_times" },
-      { label: "Four or more", image: "images/four-or-more.png", value: "four_or_more" }
+      { label: "Once",        image: "images/once.png",         value: "once" },
+      { label: "2 to 3",      image: "images/twice.png",        value: "2_to_3" },
+      { label: "4 or more",   image: "images/three-times.png",  value: "4_or_more" },
+      { label: "N/A",         image: "images/four-or-more.png", value: "na" }
     ]
   },
   {
     title: "What best describes where you live?",
     answers: [
-      { label: "This city",     image: "images/this-region.png",   value: "this_city" },
-      { label: "This province", image: "images/this-province.png", value: "this_province" },
-      { label: "Canada",        image: "images/canada.png",        value: "canada" },
-      { label: "International", image: "images/international.png", value: "international" }
+      { label: "I live here",             image: "images/this-region.png",   value: "local" },
+      { label: "I live in this province", image: "images/this-province.png", value: "this_province" },
+      { label: "Outside this province",   image: "images/canada.png",        value: "outside_province" },
+      { label: "Tourist",                 image: "images/international.png", value: "tourist" }
     ]
   },
   {
@@ -22,10 +22,10 @@ const questionsEN = [
     textOnly: true,
     answers: [
       { label: "Vacation / Day off", value: "vacation_day_off" },
-      { label: "Celebration", value: "celebration" },
-      { label: "On a date",   value: "date" },
-      { label: "School",      value: "school" },
-      { label: "Work",        value: "work" }
+      { label: "Celebration",        value: "celebration" },
+      { label: "On a date",          value: "date" },
+      { label: "School",             value: "school" },
+      { label: "Work",               value: "work" }
     ]
   }
 ];
@@ -35,18 +35,18 @@ const questionsFR = [
     title: "Combien de fois par année visite-tu Queues de Castor?",
     answers: [
       { label: "Une fois",      image: "images-fr/once-fr.png",         value: "once" },
-      { label: "Deux fois",     image: "images-fr/twice-fr.png",        value: "twice" },
-      { label: "Trois fois",    image: "images-fr/three-times-fr.png",  value: "three_times" },
-      { label: "Quatre fois +", image: "images-fr/four-or-more-fr.png", value: "four_or_more" }
+      { label: "2 à 3 fois",    image: "images-fr/twice-fr.png",        value: "2_to_3" },
+      { label: "4 fois ou plus",image: "images-fr/three-times-fr.png",  value: "4_or_more" },
+      { label: "N/A",           image: "images-fr/four-or-more-fr.png", value: "na" }
     ]
   },
   {
-    title: "Qu'est-ce qui décrit le mieux l'endroit où tu vis?",
+    title: "Qu’est-ce qui décrit le mieux l’endroit où tu vis?",
     answers: [
-      { label: "Cette ville",    image: "images-fr/this-region-fr.png",   value: "this_city" },
-      { label: "Cette province", image: "images-fr/this-province-fr.png", value: "this_province" },
-      { label: "Canada",         image: "images-fr/canada-fr.png",        value: "canada" },
-      { label: "International",  image: "images-fr/international-fr.png", value: "international" }
+      { label: "J’habite ici",               image: "images-fr/this-region-fr.png",   value: "local" },
+      { label: "J’habite dans cette province",image: "images-fr/this-province-fr.png", value: "this_province" },
+      { label: "Hors de cette province",      image: "images-fr/canada-fr.png",        value: "outside_province" },
+      { label: "Touriste",                    image: "images-fr/international-fr.png", value: "tourist" }
     ]
   },
   {
@@ -54,10 +54,10 @@ const questionsFR = [
     textOnly: true,
     answers: [
       { label: "Vacances / Jour de congé", value: "vacation_day_off" },
-      { label: "Célébration",   value: "celebration" },
-      { label: "Sortie en couple",   value: "date" },
-      { label: "École / sortie scolaire",         value: "school" },
-      { label: "Travail",       value: "work" }
+      { label: "Célébration",              value: "celebration" },
+      { label: "Sortie en couple",         value: "date" },
+      { label: "École",                    value: "school" },
+      { label: "Travail",                  value: "work" }
     ]
   }
 ];

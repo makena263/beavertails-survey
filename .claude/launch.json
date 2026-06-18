@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "travel-planner",
+      "runtimeExecutable": "/opt/homebrew/bin/python3",
+      "runtimeArgs": ["/Users/Makena/Desktop/travelplanner/serve.py"],
+      "port": 3456,
+      "autoPort": true
+    }
+  ]
+}
