@@ -98,7 +98,8 @@ const REVIEW_LINKS = {
   "niagara-outlet":         "https://search.google.com/local/writereview?placeid=ChIJtaUJRPFa04kRyy4NR4AlU6Q",
   "calgary-17av":           "https://search.google.com/local/writereview?placeid=ChIJVS7ehNNxcVMRpUniZeALxpo",
   "west-edmonton-mall":     "https://search.google.com/local/writereview?placeid=ChIJTVjNqYkhoFMRxJ0mTAluQjM",
-  "white-rock":             "https://search.google.com/local/writereview?placeid=ChIJS_KEMtjDhVQR0IoyXChIZfA"
+  "white-rock":             "https://search.google.com/local/writereview?placeid=ChIJS_KEMtjDhVQR0IoyXChIZfA",
+  "jasper":                 "https://search.google.com/local/writereview?placeid=ChIJyxkaHhwrg1MRXQiaE-nMyxo"
 };
 
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzSfCocHorKKULJc917yttbNuiCNimNhTF3z4-eiGdkerHR7AgC2d0iFsDvfB0AyhytBA/exec";
