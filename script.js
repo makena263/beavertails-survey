@@ -43,10 +43,10 @@ const questionsFR = [
   {
     title: "Qu’est-ce qui décrit le mieux l’endroit où tu vis?",
     answers: [
-      { label: "J’habite ici",               image: "images-fr/this-region-fr.png",   value: "local" },
+      { label: "J’habite ici",               image: "images-fr/this-region-fr.png",   value: "this_city" },
       { label: "J’habite dans cette province",image: "images-fr/this-province-fr.png", value: "this_province" },
-      { label: "Hors de cette province",      image: "images-fr/canada-fr.png",        value: "outside_province" },
-      { label: "Touriste",                    image: "images-fr/international-fr.png", value: "tourist" }
+      { label: "Hors de cette province",      image: "images-fr/canada-fr.png",        value: "canada" },
+      { label: "Touriste",                    image: "images-fr/international-fr.png", value: "international" }
     ]
   },
   {
