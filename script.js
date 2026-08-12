@@ -96,7 +96,7 @@ const REVIEW_LINKS = {
   "waterton":               "https://search.google.com/local/writereview?placeid=ChIJSxuLBABFb1MRDywC3BPK5Uw",
   "niagara-falls-clifton":  "https://search.google.com/local/writereview?placeid=ChIJQbZJYRdD04kRtKANa0nJUWA",
   "niagara-outlet":         "https://search.google.com/local/writereview?placeid=ChIJtaUJRPFa04kRyy4NR4AlU6Q",
-  "calgary-17av":           "https://search.google.com/local/writereview?placeid=ChIJVS7ehNNxcVMRpUniZeALxpo",
+  "calgary-17av":           "https://search.google.com/local/writereview?placeid=ChIJVS7ehNNxcVMRpUniZeALxpo&source=g.page.m.nr._&laa=nmx-review-solicitation-recommendation-card",
   "west-edmonton-mall":     "https://search.google.com/local/writereview?placeid=ChIJTVjNqYkhoFMRxJ0mTAluQjM",
   "white-rock":             "https://search.google.com/local/writereview?placeid=ChIJS_KEMtjDhVQR0IoyXChIZfA",
   "jasper":                 "https://search.google.com/local/writereview?placeid=ChIJyxkaHhwrg1MRXQiaE-nMyxo"
