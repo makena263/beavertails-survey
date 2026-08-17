@@ -112,19 +112,16 @@ const dots = document.querySelectorAll(".dot");
 const langToggleBtn = document.getElementById("lang-toggle");
 const logo = document.getElementById("logo");
 const backBtn = document.getElementById("back-btn");
-const resultTitle = document.getElementById("result-title");
 const resultBody = document.getElementById("result-body");
 const reviewLink = document.getElementById("review-link");
 
 function updateResultScreen() {
   if (lang === "fr") {
-    resultTitle.textContent = "Merci !";
     resultBody.textContent = "Vos réponses ont été enregistrées.";
     reviewLink.textContent = "⭐ Évaluez-nous sur Google";
     logo.src = "images-fr/beavertails-logo-fr.png";
     backBtn.textContent = "← Retour";
   } else {
-    resultTitle.textContent = "Thank you!";
     resultBody.textContent = "Your answers have been recorded.";
     reviewLink.textContent = "⭐ Review us on Google";
     logo.src = "images/beavertails-logo.png";
